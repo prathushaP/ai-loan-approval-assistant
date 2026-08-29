@@ -21,10 +21,10 @@ export function ToastProvider({ children }: { children: ReactNode }) {
             key={t.id}
             className={`rounded-xl px-4 py-3 text-sm shadow-lg border backdrop-blur ${
               t.type === 'err'
-                ? 'bg-red-50 border-red-200 text-red-800 dark:bg-red-950 dark:text-red-100'
+                ? 'bg-red-50 border-red-200 text-red-800 dark:bg-red-950 dark:border-red-700 dark:text-red-100'
                 : t.type === 'ok'
-                  ? 'bg-emerald-50 border-emerald-200 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-100'
-                  : 'bg-white border-slate-200 text-slate-800 dark:bg-slate-900 dark:text-slate-100 dark:border-slate-700'
+                  ? 'bg-emerald-50 border-emerald-200 text-emerald-800 dark:bg-emerald-950 dark:border-emerald-700 dark:text-emerald-100'
+                  : 'bg-white border-slate-200 text-slate-800 dark:bg-slate-900 dark:text-slate-50 dark:border-slate-600'
             }`}
           >
             {t.message}
