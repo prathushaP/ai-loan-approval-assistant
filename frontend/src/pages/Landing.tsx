@@ -12,6 +12,17 @@ const features = [
   { icon: ShieldCheck, title: 'Officer Workflow', desc: 'History, search, filter, edit, delete, and AI chat grounded in application data.' },
 ]
 
+const screens = [
+  { title: 'Dashboard KPIs', src: 'screenshots/dashboard.png', href: '/dashboard' },
+  { title: 'Application Workspace', src: 'screenshots/application.png', href: '/apply' },
+  { title: 'Scenario Simulator', src: 'screenshots/simulator.png', href: '/simulator' },
+]
+
+function assetUrl(path: string) {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base.endsWith('/') ? base : `${base}/`}${path.replace(/^\//, '')}`
+}
+
 function slidersIcon(props: { size?: number }) {
   return <SlidersHorizontal {...props} />
 }
@@ -60,10 +71,24 @@ export default function Landing() {
       <section>
         <h2 className="mb-6 text-2xl font-bold">Product Screens</h2>
         <div className="grid gap-4 md:grid-cols-3">
-          {['Dashboard KPIs', 'Application Workspace', 'Scenario Simulator'].map((s) => (
-            <Card key={s} className="flex h-40 items-center justify-center bg-gradient-to-br from-slate-100 to-blue-50 p-4 text-sm font-semibold text-slate-500 dark:from-slate-900 dark:to-slate-800">
-              Screenshot placeholder · {s}
-            </Card>
+          {screens.map((s) => (
+            <Link key={s.title} to={s.href} className="group block">
+              <Card className="overflow-hidden p-0 transition hover:-translate-y-0.5 hover:shadow-lg dark:hover:shadow-black/40">
+                <div className="relative h-44 overflow-hidden bg-slate-100 dark:bg-slate-900 sm:h-52">
+                  <img
+                    src={assetUrl(s.src)}
+                    alt={s.title}
+                    className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                    <div className="text-sm font-semibold text-white drop-shadow">{s.title}</div>
+                    <div className="text-[11px] text-slate-200/90">Click to open</div>
+                  </div>
+                </div>
+              </Card>
+            </Link>
           ))}
         </div>
       </section>
