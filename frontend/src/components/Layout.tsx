@@ -73,7 +73,7 @@ export default function Layout() {
       </main>
       <footer className="border-t border-slate-200/70 py-8 text-center text-xs text-slate-500 dark:border-slate-600/70 dark:text-slate-300">
         © {new Date().getFullYear()} AI Loan Approval Assistant · Portfolio project by Prathusha · Decision support only
-        <div className="mt-2 inline-flex items-center gap-1"><MessageSquare size={12} /> Gemini-powered explanations when API key is configured</div>
+        <div className="mt-2 inline-flex items-center gap-1"> With <MessageSquare size={12} /> Gemini-powered explanations [depends on tokens :) ] </div>
       </footer>
     </div>
   )
