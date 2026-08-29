@@ -1,0 +1,22 @@
+# Python
+backend/.venv/
+backend/**/__pycache__/
+backend/.env
+backend/database/*.db
+backend/reports/*.pdf
+*.pyc
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.production.local
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Models can be large but we commit small joblib for convenience - ignore if huge
+# backend/models/*.joblib

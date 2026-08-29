@@ -1,0 +1,32 @@
+{
+  "features": [
+    "age",
+    "years_employment",
+    "annual_income",
+    "monthly_expenses",
+    "savings",
+    "bank_balance",
+    "credit_score",
+    "monthly_emi",
+    "loan_amount",
+    "loan_term",
+    "interest_rate",
+    "collateral",
+    "debt_to_income_ratio",
+    "loan_to_income_ratio",
+    "financial_stability_score",
+    "savings_ratio"
+  ],
+  "best_model": "logistic_regression",
+  "metrics": {
+    "logistic_regression": {
+      "accuracy": 0.846,
+      "auc": 0.9244330015251152
+    },
+    "random_forest": {
+      "accuracy": 0.844,
+      "auc": 0.9226291018219388
+    }
+  },
+  "threshold": 0.5
+}
